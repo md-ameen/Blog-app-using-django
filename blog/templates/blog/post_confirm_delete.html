@@ -1,0 +1,13 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+<div class="content-section">
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <legend class="border-bottom mb-4">Are you sure you want to delete the post - {{ object.title }}</legend>
+        <div class="form-group">
+            <a class="btn btn-outline-info" type="submit" href="{% url 'post-detail' object.id %}">Cancel</a>
+            <button class="btn btn-outline-danger" type="submit">Delete</button>
+        </div>
+    </form>
+</div>
+{% endblock content %}
